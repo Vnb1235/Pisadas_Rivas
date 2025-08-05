@@ -1,0 +1,566 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,487;1,487&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: sans-serif;
+    margin: 0;
+   /* background-color: #f5f5f5;*/
+   background-color: #242424;
+    
+}
+
+/* Aplica solo a las secciones ancladas */
+#inicio, #cat, #brands, #contact {
+    scroll-margin-top: 80px; /* igual o un poco más que el alto del header */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+span {
+    color: #6b94e0;
+}
+
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    color: wheat;
+
+}
+
+.user-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 600px;
+}
+
+.user-divider .line {
+  flex: 1;
+  height: 1px;
+  background-color: #f4f4f4; /* Cambia el color de la línea */
+  margin: 0 10px; /* Espacio entre línea e icono */
+}
+
+.user-divider i {
+  font-size: 24px; /* Tamaño del icono */
+  color: #f4f4f4;     /* Color del icono */
+}
+
+
+h1 {
+    font-size: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#main-header {
+    position: fixed;
+    top: 0;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 65px; /*altura del header*/
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+    z-index: 1000;
+    display: flex;
+    background-color: transparent; /*Color del header #222*/
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-header.scrolled {
+  background-color: #242424;
+  border-bottom: 1px solid #727272;
+}
+
+.logo {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.logo img {
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    filter: invert(1);
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 25px;
+    color: white; /*color textos barra*/
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+#cat{
+    position: relative;
+    padding-top: 65px;   /* 👈 altura del header */
+    margin-top: 3px;   /* 👈 compensa el scroll */
+}
+
+/*Barra de búsqueda*/
+.search-box {
+    position: relative;
+    width: 20%; /*ancho de la barra*/
+    margin-right: 20px;
+    max-width: 500px;
+    margin: 0 ;
+    color: white;
+}
+
+.search-box i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 18px;
+}
+
+.search-box input {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /*#222*/
+    color: white;
+    padding: 12px 20px 12px 45px; /* espacio para la lupa */
+    border: 1px solid rgb(73, 72, 70);
+    border-radius: 30px;
+    font-size: 13px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
+}
+
+.search-box input::placeholder {
+    color: rgb(182, 182, 182);
+}
+
+/*Carrusel*/
+.carousel-container {
+  width: 100%;
+  height: 630px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-wrapper {
+  display: flex;
+  width: 100%; /* 3 imágenes = 300% */
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*Aqui es de las tarjetas*/
+
+.card {
+    width: 260px;
+    background: transparent;
+    border-radius: 15px;
+    border: 2px solid yellow;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+    margin-top: 3px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-image img {
+    width: 100%;
+    display: block;
+    height: 140px; /* 👈 más bajo */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+    text-align: center;
+}
+
+.brand {
+    font-size: 1rem;
+    color: #f4f4f4;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.model {
+    font-size: 1.2rem;
+    color: #f4f4f4;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: 0.85rem;
+    color: #afa5a5;
+    margin-bottom: 10px;
+}
+
+.rating i {
+    color: #f8c102;
+    margin: 0 1px;
+    font-size: 0.9rem;
+}
+
+.price span {
+    font-size: 1.2rem;
+    color: #6b94e0;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.sizes, .colors {
+    margin: 8px 0;
+}
+
+.sizes p, .colors p {
+    font-weight: 600;
+    color: rgb(23, 180, 50);
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+.sizes button {
+    border: 1px solid #eb8b8b;
+    background: #d4d0d0;
+    padding: 3px 8px; /* 👈 más compacto */
+    margin: 0 3px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 0.85rem; /*0.85rem*/
+}
+
+.sizes button:hover {
+    background: #f4f4f4;
+}
+
+.colors .color {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 3px;
+    border: 1px solid #ccc;
+}
+
+.color-red { background: red; }
+.color-blue { background: blue; }
+.color-black { background: black; }
+.color-white { background: white; }
+
+.add-to-cart {
+    margin-top: 1px;
+    background: rgb(143, 143, 127);
+    color: #f4f4f4;
+    border: none;
+    padding: 8px 15px; /* 👈 más compacto */
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: #e77373;
+}
+
+.cards-container {
+    display: flex;        /* 📦 Activa flexbox */
+    flex-wrap: wrap;      /* 🔄 Permite que salten a la siguiente fila si no caben */
+    gap: 20px;            /* 🪜 Espacio entre tarjetas */
+    justify-content: center; /* 🔥 Centra las tarjetas horizontalmente */
+    padding: 20px;        /* 📐 Un poco de espacio alrededor */
+    margin-top: 90px;
+}
+
+/*nose jaja*/
+
+/* Marcas */
+#brands .brands-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+#brands img {
+    height: 80px;
+    filter: grayscale(100%);
+    transition: 0.3s ease;
+}
+
+#brands img:hover {
+    filter: none;
+    transform: scale(1.1);
+}
+
+/* Contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    gap: 15px;
+    padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #eee;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+}
+
+/* Estilos hamburguesa */
+.hamburger {
+  display: none; /* oculto en desktop */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mostrar hamburguesa y ocultar menú en móvil */
+@media (max-width: 1024px) {
+  nav {
+    display: none;  /* ocultamos menú normal */
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background-color: #242424;
+    flex-direction: column;
+    width: 200px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    z-index: 1001;
+  }
+  
+  nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex; /* mostrar hamburguesa */
+  }
+  
+  /* Opcional: espaciado de enlaces para que no queden muy juntos */
+  nav a {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+}
+
+
+/* 📱 RESPONSIVE – Celulares y tablets */
+@media (max-width: 1024px) {
+  /* Header */
+  #main-header {
+    flex-direction: column;
+    height: 75px;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 10px;
+  }
+
+  .logo {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  /* Buscador */
+  .search-box {
+    width: 40%;
+    margin: 10px auto;
+  }
+
+  /* Carrusel */
+  .carousel-container {
+    height: 250px;
+  }
+
+  .carousel-slide img {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  /* Tarjetas de productos */
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card-image img {
+    height: 180px;
+  }
+
+  /* Título h2 */
+  h2 {
+    font-size: 32px;
+  }
+
+  /* Divider (línea decorativa) */
+  .user-divider {
+    width: 90%;
+  }
+
+  /* Sección Marcas */
+  #brands .brands-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #brands img {
+    height: 60px;
+  }
+
+  /* Contacto */
+  .contact-form {
+    width: 90%;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Más compacto para celulares pequeños */
+  h1 {
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .card-image img {
+    height: 140px;
+  }
+
+  .carousel-container {
+    height: 180px;
+  }
+
+  .carousel-slide img {
+    height: 180px;
+  }
+
+  .logo img {
+    height: 20px;
+  }
+}
