@@ -85,7 +85,7 @@ h1 {
 }
 
 #main-header.scrolled {
-  background-color: #242424;
+  background-color: rgb(36, 36, 36);
   border-bottom: 1px solid #727272;
 }
 
@@ -111,11 +111,12 @@ nav a {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
+#nose {
+  margin-left: 150px;
+}
+
 nav a:hover {
     color: yellow;
-}
-#nose{
-    margin-left: 125px;
 }
 
 #cat{
@@ -336,6 +337,7 @@ nav a:hover {
     height: 80px;
     filter: grayscale(100%);
     transition: 0.3s ease;
+    filter: invert(1);
 }
 
 #brands img:hover {
@@ -351,13 +353,16 @@ nav a:hover {
     margin: auto;
     gap: 15px;
     padding: 20px;
+    color: white;
 }
 
 .contact-form input,
 .contact-form textarea {
     padding: 10px;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid yellow;
     border-radius: 8px;
+    background-color: transparent;
+    color: white;
 }
 
 .contact-form button {
@@ -567,4 +572,3 @@ footer {
     height: 20px;
   }
 }
-
